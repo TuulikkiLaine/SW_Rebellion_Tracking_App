@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="sw">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body ng-controller="sw-board">
+  <div class="wrapper">
+    <h1>Star Wars Rebellion - Tracking App</h1>
+    <div ng-repeat="region in regions" class="col-lg-3 col-sm-6 region">
+    <div class="inner">
+      <h2>{{region.name}}</h2>
+      <div ng-repeat="planet in region.planets" class="planet">
+      <span class="status explored" ng-if="planet.explored">E</span>
+      <span class="status probed" ng-if="planet.probed">P</span>
+      <span class="planet_name">{{planet.name}}</span>
+      <button class="probe" ng-click="probe(planet)" ng-class="{'disabled' : planet.probed}">Probe</button>
+      <button class="explore" ng-click="explore(planet)"  ng-class="{'disabled' : planet.explored}">Explore</button>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
