@@ -2,7 +2,7 @@ var app = angular.module('sw', []);
 
 app.controller('sw-board', function($scope,$document) {
   $scope.regions = [
-    {'name' : 'Mon-Calamari Region', 'planets':[
+    {'name' : 'Mon Calamari Region', 'planets':[
         {'name' : 'Mon Calamari', 'probed' :0, 'explored' :0},
         {'name' : 'Yavin', 'probed' :0, 'explored' :0},
         {'name' : 'Felucia', 'probed' :0, 'explored' :0},
