@@ -1,52 +1,52 @@
-const
-  version = '1.0.0',
-  CACHE = version + '::SW-APP',
-  offlineURL = '/SW_Rebellion_Tracking_App/',
-  installFilesEssential = [
-    'manifest.json',
-    'style.css',
-    'main.js',
-    'bg.jpg'
-  ].concat(offlineURL)
+const PRECACHE = 'precache-v1';
+const RUNTIME = 'runtime';
 
-
-  function installStaticFiles() {
-    return caches.open(CACHE)
-    .then(cache => {
-      return cache.addAll(installFilesEssential);
-    });
-}
+const PRECACHE_URLS = [
+  './index.html',
+  './',
+  './style.css',
+  './main.js',
+  './manifest.json',
+  './data.json'
+];
 
 self.addEventListener('install', event => {
-  console.log('service worker: install');
   event.waitUntil(
-    installStaticFiles()
-    .then(() => self.skipWaiting())
+    caches.open(PRECACHE)
+      .then(cache => cache.addAll(PRECACHE_URLS))
+      .then(self.skipWaiting())
   );
+});
 
+self.addEventListener('activate', event => {
+  const currentCaches = [PRECACHE, RUNTIME];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
+    }).then(cachesToDelete => {
+      return Promise.all(cachesToDelete.map(cacheToDelete => {
+        return caches.delete(cacheToDelete);
+      }));
+    }).then(() => self.clients.claim())
+  );
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  let url = event.request.url;
-  event.respondWith(
-    caches.open(CACHE)
-      .then(cache => {
-        return cache.match(event.request)
-          .then(response => {
-            if (response) {
-              console.log('cache fetch: ' + url);
-              return response;
-            }
-            return fetch(event.request)
-              .then(newreq => {
-                console.log('network fetch: ' + url);
-                if (newreq.ok) cache.put(event.request, newreq.clone());
-                return newreq;
+  if (event.request.url.startsWith(self.location.origin)) {
+    event.respondWith(
+      caches.match(event.request).then(cachedResponse => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
 
-              })
-              .catch(() => offlineAsset(url));
+        return caches.open(RUNTIME).then(cache => {
+          return fetch(event.request).then(response => {
+            return cache.put(event.request, response.clone()).then(() => {
+              return response;
+            });
           });
+        });
       })
-  );
+    );
+  }
 });
