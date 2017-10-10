@@ -1,0 +1,17 @@
+{
+  "name"              : "Star Wars: Rebellion Tracking App",
+  "short_name"        : "SW:R",
+  "description"       : "An app to track your progress in Star Wars: Rebellion Board Game as the Imperial Player.",
+  "start_url"         : "/",
+  "display"           : "standalone",
+  "orientation"       : "any",
+  "background_color"  : "#000",
+  "theme_color"       : "#000",
+  "icons": [
+    {
+      "src"           : "/icon.png",
+      "sizes"         : "72x72",
+      "type"          : "image/png"
+    }
+  ]
+}
