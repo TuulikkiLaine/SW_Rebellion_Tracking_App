@@ -26,3 +26,28 @@ self.addEventListener('install', event => {
   );
 
 });
+
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+  let url = event.request.url;
+  event.respondWith(
+    caches.open(CACHE)
+      .then(cache => {
+        return cache.match(event.request)
+          .then(response => {
+            if (response) {
+              console.log('cache fetch: ' + url);
+              return response;
+            }
+            return fetch(event.request)
+              .then(newreq => {
+                console.log('network fetch: ' + url);
+                if (newreq.ok) cache.put(event.request, newreq.clone());
+                return newreq;
+
+              })
+              .catch(() => offlineAsset(url));
+          });
+      })
+  );
+});
