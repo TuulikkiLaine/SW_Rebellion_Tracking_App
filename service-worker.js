@@ -3,7 +3,6 @@ const
   CACHE = version + '::SW-APP',
   offlineURL = '/SW_Rebellion_Tracking_App/',
   installFilesEssential = [
-    '/SW_Rebellion_Tracking_App/',
     'manifest.json',
     'style.css',
     'main.js',
