@@ -1,0 +1,50 @@
+[
+  {"name" : "Mon Calamari Region", "planets":[
+      {"name" : "Mon Calamari"},
+      {"name" : "Yavin"},
+      {"name" : "Felucia"},
+      {"name" : "Saleucami"}
+      ]},
+  {"name" : "Nal Hutta Region","planets":[
+    {"name" : "Nal Hutta"},
+    {"name" : "Kessel"},
+    {"name" : "Toydaria"},
+    {"name" : "Bothawui"}
+  ]},
+  {"name" : "Rodia Region","planets":[
+    {"name" : "Tatooine"},
+    {"name" : "Rodia"},
+    {"name" : "Ryloth"},
+    {"name" : "Geonosis"}
+  ]},
+  {"name" : "Utapau Region","planets":[
+    {"name" : "Utapau"},
+    {"name" : "Naboo"},
+    {"name" : "Dagobah"},
+    {"name" : "Sullust"}
+  ]},
+  {"name" : "Mygeeto Region","planets":[
+    {"name" : "Dantooine"},
+    {"name" : "Mygeeto"},
+    {"name" : "Ilum"},
+    {"name" : "Ord Mantell"}
+  ]},
+  {"name" : "Kashyyyk Region","planets":[
+    {"name" : "Dathomir"},
+    {"name" : "Mandalore"},
+    {"name" : "Kashyyyk"},
+    {"name" : "Malastare"}
+  ]},
+  {"name" : "Coruscant Region","planets":[
+    {"name" : "Coruscant"},
+    {"name" : "Cato Neimodia"},
+    {"name" : "Alderaan"},
+    {"name" : "Corellia"}
+  ]},
+  {"name" : "Mustafar Region","planets":[
+    {"name" : "Bespin"},
+    {"name" : "Mustafar"},
+    {"name" : "Endor"},
+    {"name" : "Hoth"}
+  ]}
+  ]
