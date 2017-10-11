@@ -1,0 +1,23 @@
+.svg-wrapper{
+  text-align: center;
+  padding: 25px;
+  svg{
+    width : 800px;
+    max-width: 100%;
+  }
+
+  path{
+    stroke:$black;
+    stroke-width: 1.5;
+    fill: $white;
+  }
+
+  path.probed{
+    stroke:$red;
+    stroke-width: 2.5;
+  }
+  path.explored{
+    fill:$green;
+  }
+}
+
