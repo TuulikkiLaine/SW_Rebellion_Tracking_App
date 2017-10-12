@@ -1,5 +1,5 @@
 {
-  "short_name"        : "SW:R",
+  "short_name"        : "SW:R Tracker",
   "name"              : "Star Wars: Rebellion Tracking App",
   "description"       : "An app to track your progress in Star Wars: Rebellion Board Game as the Imperial Player.",
   "start_url"         : "/SW_Rebellion_Tracking_App/",
