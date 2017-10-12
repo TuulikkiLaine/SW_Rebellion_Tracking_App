@@ -1,14 +1,17 @@
 body,html{
   font-family: 'Catamaran', sans-serif;
-  background: url('bg.jpg') no-repeat;
+  background: url('img/bg.jpg') no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
 }
+
 
 .wrapper{
   max-width: 1600px;
   margin:0 auto;
   width: 100%;
+  padding-bottom:50px;
   p{
     color:$white;
     font-size: 22px;
