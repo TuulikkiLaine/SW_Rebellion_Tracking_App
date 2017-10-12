@@ -25,6 +25,11 @@ body,html{
     background: #fff;
     border: 1px solid $green;
     color: $green;
+    transition: all 0.2s ease;
+  }
+  button.clear:hover{
+    background: $green;
+    color:$white;
   }
   .region{
     margin-bottom:25px;
