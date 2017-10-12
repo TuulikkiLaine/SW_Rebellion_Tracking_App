@@ -1,4 +1,4 @@
-const PRECACHE = 'precache-v1.4';
+const PRECACHE = 'precache-v1.5';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -7,7 +7,8 @@ const PRECACHE_URLS = [
   './main.js',
   './manifest.json',
   './data.json',
-  './img/bg.jpg'
+  './img/bg.jpg',
+  './img/mbg.jpg'
 ];
 
 self.addEventListener('install', event => {

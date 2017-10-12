@@ -4,6 +4,12 @@ body,html{
   background-size: cover;
   min-height: 100vh;
   position: relative;
+  @media(max-width: 767px){
+    background-image: url('img/mbg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: $black;
+  }
 }
 
 
