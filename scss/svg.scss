@@ -8,6 +8,7 @@
     stroke:$black;
     stroke-width: 1.5;
     fill: $white;
+    cursor:pointer;
   }
   path.explored{
     fill:$green;
