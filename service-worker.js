@@ -1,4 +1,4 @@
-const PRECACHE = 'precache-v1.2';
+const PRECACHE = 'precache-v1.1';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -17,10 +17,19 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request);
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
     })
   );
+});
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(fetch(event.request));
 });
