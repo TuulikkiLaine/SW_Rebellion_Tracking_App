@@ -15,9 +15,12 @@
     <div class="container svg-wrapper">
         <svg viewBox="0 0 980 530" xmlns="http://www.w3.org/2000/svg">
          <g id="{{region.name}}" ng-repeat="region in regions">
-          <path ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
+          <path ng-click=probe(planet) ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
          </g>
         </svg>
+    </div>
+    <div class="container">
+      <button class="clear" ng-click="clear(regions)">Clear all explored</button>
     </div>
     <div ng-repeat="region in regions" class="col-lg-3 col-sm-6 region">
     <div class="inner">

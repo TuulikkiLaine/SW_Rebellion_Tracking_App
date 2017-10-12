@@ -11,13 +11,11 @@
     stroke-width: 1.5;
     fill: $white;
   }
-
-  path.probed{
-    stroke:$red;
-    stroke-width: 6;
-  }
   path.explored{
     fill:$green;
+  }
+  path.probed{
+    fill:$red;
   }
 }
 
