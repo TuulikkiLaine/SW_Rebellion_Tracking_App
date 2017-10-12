@@ -11,8 +11,8 @@
 </head>
 <body ng-controller="sw-board">
   <div class="wrapper">
-    <h1>Star Wars Rebellion - Tracking App</h1>
     <div class="container svg-wrapper">
+        <p>Your situation on map. Click area to probe.</p>
         <svg viewBox="0 0 980 530" xmlns="http://www.w3.org/2000/svg">
          <g id="{{region.name}}" ng-repeat="region in regions">
           <path ng-click=probe(planet) ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
@@ -20,8 +20,9 @@
         </svg>
     </div>
     <div class="container">
-      <button class="clear" ng-click="clear(regions)">Clear all explored</button>
+      <button class="clear" ng-click="clear(regions)">Clear all explored systems</button>
     </div>
+    <div class="col-sm-12"><p>Mark regions as probed or explored:</p></div>
     <div ng-repeat="region in regions" class="col-lg-3 col-sm-6 region">
     <div class="inner">
       <h2>{{region.name}}</h2>
