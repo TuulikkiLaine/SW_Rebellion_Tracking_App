@@ -1,4 +1,4 @@
-const PRECACHE = 'precache-v1.2';
+const PRECACHE = 'precache-v1.3';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -6,7 +6,7 @@ const PRECACHE_URLS = [
   './style.css',
   './main.js',
   './manifest.json',
-  './data.json'
+  './data.json',
   './img/bg.jpg'
 ];
 
