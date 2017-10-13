@@ -22,20 +22,22 @@ body,html{
     color:$white;
     font-size: 22px;
   }
-  button.clear{
+  .controls{
     text-align: center;
-    display: block;
-    margin: 0 auto 25px auto;
-    padding: 5px 15px;
-    font-size: 22px;
-    background: #fff;
-    border: 1px solid $green;
-    color: $green;
-    transition: all 0.2s ease;
-  }
-  button.clear:hover{
-    background: $green;
-    color:$white;
+    button{
+      text-align: center;
+      padding: 5px 15px;
+      margin:5px;
+      font-size: 22px;
+      background: #fff;
+      border: 1px solid $green;
+      color: $green;
+      transition: all 0.2s ease;
+    }
+    button:hover{
+      background: $green;
+      color:$white;
+    }
   }
   .region{
     margin-bottom:25px;

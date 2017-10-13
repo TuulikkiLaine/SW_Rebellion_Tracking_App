@@ -1,5 +1,6 @@
 .svg-wrapper{
   padding: 25px;
+  transition: all 0.2s ease;
   svg{
     max-width: 100%;
   }
@@ -16,5 +17,9 @@
   path.probed{
     fill:$red;
   }
+}
+
+.svg-wrapper.flipped{
+  transform: rotateX(180deg);
 }
 

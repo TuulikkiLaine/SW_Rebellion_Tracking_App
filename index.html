@@ -13,16 +13,17 @@
 </head>
 <body ng-controller="sw-board">
   <div class="wrapper">
-    <div class="container svg-wrapper">
-        <p>Your situation on map. Click area to explore it.</p>
+    <div class="container svg-wrapper" ng-class='{"flipped" : flipped}'>
         <svg viewBox="0 0 980 530" xmlns="http://www.w3.org/2000/svg">
          <g id="{{region.name}}" ng-repeat="region in regions">
           <path ng-click=explore(planet) ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
          </g>
         </svg>
     </div>
-    <div class="container">
+    <div class="container controls">
+      <p>Your situation on map. Click area to explore it.</p>
       <button class="clear" ng-click="clear(regions)">Clear all explored systems</button>
+      <button class="flip" ng-click="flip()">Flip game board</button>
     </div>
     <div class="container-fluid">
     <div class="col-sm-12"><p>Mark regions as probed or explored:</p></div>
