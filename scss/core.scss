@@ -37,6 +37,10 @@ body,html{
       border: 1px solid $green;
       color: $green;
       transition: all 0.2s ease;
+      @media(max-width: 767px){
+        font-size: 18px;
+        width: 100%;
+      }
     }
     button:hover{
       background: $green;
