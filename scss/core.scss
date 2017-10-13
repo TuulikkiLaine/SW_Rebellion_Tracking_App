@@ -12,6 +12,11 @@ body,html{
   }
 }
 
+a,a:hover,a:visited{
+  color:$green;
+  cursor:pointer;
+  text-decoration: none;
+}
 
 .wrapper{
   max-width: 1600px;
@@ -103,5 +108,22 @@ body,html{
       padding-left:0;
       padding-right: 0;
     }
+  }
+}
+
+footer{
+  background:$white;
+  padding:15px;
+  a{
+    line-height: 50px;
+  }
+  p{
+    margin:0;
+  }
+  .close_footer{
+    display: none;
+  }
+  .close_footer.visible{
+    display: inline;
   }
 }

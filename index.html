@@ -23,7 +23,7 @@
     <div class="container controls">
       <p>Your situation on map. Click area to explore it.</p>
       <button class="clear" ng-click="clear(regions)">Clear all explored systems</button>
-      <button class="flip" ng-click="flip()">Flip game board</button>
+      <button class="flip" ng-click="flipped =! flipped">Flip game board</button>
     </div>
     <div class="container-fluid">
     <div class="col-sm-12"><p>Mark regions as probed or explored:</p></div>
@@ -41,6 +41,14 @@
   </div>
   </div>
 </div>
+<footer class="footer">
+<p><span class="close_footer" ng-class="{'visible' : show_about}">X</span>
+<a class="open_footer" ng-click="show_about =! show_about">Read more about this app</a></p>
+<div ng-show="show_about" class="about"><p>This is a helper app for board game "Star Wars: Rebellion". It's meant to help especially the imperial player to track their progress in exploring and probing the systems while trying to find rebel base.</p>
+<p>This app is completely fan-made and has no connection to Fantasy Flight Games.</p>
+<p><a href="https://www.fantasyflightgames.com/en/products/star-wars-rebellion/" target="_blank">About the game.</a></p>
+</div>
+</footer>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="./main.js"></script>
 </body>
