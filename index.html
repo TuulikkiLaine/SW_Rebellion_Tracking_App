@@ -14,10 +14,10 @@
 <body ng-controller="sw-board">
   <div class="wrapper">
     <div class="container svg-wrapper">
-        <p>Your situation on map. Click area to probe it.</p>
+        <p>Your situation on map. Click area to explore it.</p>
         <svg viewBox="0 0 980 530" xmlns="http://www.w3.org/2000/svg">
          <g id="{{region.name}}" ng-repeat="region in regions">
-          <path ng-click=probe(planet) ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
+          <path ng-click=explore(planet) ng-repeat="planet in region.planets" id="{{planet.name}}" ng-attr-d="{{planet.path}}" ng-class="{'probed':planet.probed, 'explored':planet.explored}" />
          </g>
         </svg>
     </div>
