@@ -21,6 +21,9 @@ body,html{
   p{
     color:$white;
     font-size: 22px;
+    @media(max-width: 767px){
+      font-size: 18px;
+    }
   }
   .controls{
     text-align: center;
