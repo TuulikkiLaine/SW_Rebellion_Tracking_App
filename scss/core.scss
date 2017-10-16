@@ -22,6 +22,13 @@ a,a:hover,a:visited{
   outline-color:$green;
 }
 
+.mobile-only{
+  display: none;
+  @media(max-width: 767px){
+    display: block;
+  }
+}
+
 .wrapper{
   max-width: 1600px;
   margin:0 auto;
@@ -54,6 +61,20 @@ a,a:hover,a:visited{
     button:hover{
       background: $green;
       color:$white;
+    }
+    span{
+      cursor: pointer;
+    }
+    span.active{
+      font-weight: bold;
+      background: #fff;
+      padding: 0 3px;
+    }
+    span.mapStatusExplore{
+      color:$green;
+    }
+    span.mapStatusProbe{
+      color:$red;
     }
   }
   .region{

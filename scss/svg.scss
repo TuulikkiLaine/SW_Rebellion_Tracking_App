@@ -17,6 +17,10 @@
   path.probed{
     fill:$red;
   }
+  path.probed.explored{
+    stroke:$green;
+    stroke-width:3;
+  }
 }
 
 .svg-wrapper.flipped{
